@@ -3,6 +3,7 @@ package org.feather.distributelock;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * @projectName: distribute-lock
@@ -14,6 +15,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @version: 1.0
  */
 @MapperScan("org.feather.distributelock.dao")
+@EnableScheduling
 @SpringBootApplication
 public class DistributeLockApplication {
     public static void main(String[] args) {
