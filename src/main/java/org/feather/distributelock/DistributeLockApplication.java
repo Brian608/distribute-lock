@@ -1,5 +1,6 @@
 package org.feather.distributelock;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -12,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @since: 2023-04-28 18:01
  * @version: 1.0
  */
+@MapperScan("org.feather.distributelock.dao")
 @SpringBootApplication
 public class DistributeLockApplication {
     public static void main(String[] args) {
