@@ -30,6 +30,9 @@ public class RedisLockController {
     @Autowired
     private RedisTemplate redisTemplate;
 
+    @Autowired
+    private   RedissonClient redissonClient;
+
     @GetMapping("/redisLock")
     public String redisLock(){
         log.info("我进入了方法！");
@@ -47,9 +50,6 @@ public class RedisLockController {
 
     @GetMapping("/redissonLock")
     public String redissonLock(){
-        Config config =new Config();
-        config.useSingleServer().setAddress("redis://localhost:6379");
-        RedissonClient redissonClient= Redisson.create(config);
         RLock rLock=redissonClient.getFairLock("order");
         log.info("我进入了方法");
         try {
